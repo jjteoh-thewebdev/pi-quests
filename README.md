@@ -71,7 +71,7 @@ The application will be available at:
 
     ```bash
     cp backend/.env.sample backend/.env
-    cp frontend/.env.sample frontend/.env.local
+    cp frontend/env.sample frontend/.env.local
     ```
 
 #### Backend
@@ -111,7 +111,7 @@ cd frontend
 pnpm install
 
 # Set up environment variables
-cp .env.sample .env.local
+cp env.sample .env.local
 # Edit .env.local with your settings
 
 # Start the development server
