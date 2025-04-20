@@ -1,4 +1,5 @@
 from pydantic_settings import BaseSettings
+from pydantic import ConfigDict
 
 
 class Settings(BaseSettings):
@@ -19,9 +20,10 @@ class Settings(BaseSettings):
     RATE_LIMIT_CALLS: int = 10
     RATE_LIMIT_PERIOD: str = "seconds"  # seconds
     
-    class Config:
-        env_file = ".env"
-        case_sensitive = True
+    model_config = ConfigDict(
+        env_file=".env",
+        case_sensitive=True
+    )
 
 
 settings = Settings() 
