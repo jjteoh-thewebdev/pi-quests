@@ -135,7 +135,7 @@ Compute 100M decimal places on my machine took 113.52 seconds:
 ![100M](media/100M.JPG)
 
 PC spec and CPU utilization
-![pc info](media/cpu-utilization.JPG)
+![pc info](media/cpu-utilization.jpg)
 
 *I only have 16G RAM, 100M is the max I can push.
 
