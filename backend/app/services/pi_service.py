@@ -44,8 +44,12 @@ class PiService:
         """Calculate Pi with increasing precision up to max decimal places."""
         try:
             # Start with a minimal precision if nothing is cached
-            current_dp = max(settings.START_DECIMAL_POINTS, self._repository.get_decimal_places()) or 1
-            # current_dp = settings.START_DECIMAL_POINTS
+            cached_dp = self._repository.get_decimal_places()
+            # Handle None value properly to avoid comparison error
+            if cached_dp is None:
+                current_dp = max(settings.START_DECIMAL_POINTS, 1)
+            else:
+                current_dp = max(settings.START_DECIMAL_POINTS, cached_dp)
             
             # Cache initial value if not already cached
             if current_dp == 1:

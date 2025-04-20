@@ -1,9 +1,7 @@
 "use client"
 
-import { useRef } from "react"
-import { Canvas, useFrame } from "@react-three/fiber"
-import { OrbitControls, Environment, useTexture } from "@react-three/drei"
-import type { Mesh } from "three"
+import { Canvas } from "@react-three/fiber"
+import { OrbitControls } from "@react-three/drei"
 import Sun from "./sun"
 import Galaxy from "./galaxy"
 
@@ -33,22 +31,3 @@ export default function SunVisualization() {
         </div>
     )
 }
-
-// function Sun() {
-//     const meshRef = useRef<Mesh>(null)
-//     const sunTexture = useTexture("/textures/2k_sun.jpg")
-
-//     // Apply a yellow/orange color to make it look like the sun
-//     useFrame((state, delta) => {
-//         if (meshRef.current) {
-//             meshRef.current.rotation.y += delta * 0.1
-//         }
-//     })
-
-//     return (
-//         <mesh ref={meshRef}>
-//             <sphereGeometry args={[1, 64, 64]} />
-//             <meshStandardMaterial map={sunTexture} emissive={"#ff7b00"} emissiveIntensity={0.5} />
-//         </mesh>
-//     )
-// }

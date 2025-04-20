@@ -47,6 +47,7 @@ export default function SunInfo() {
             setPi(data.pi)
             setDp(Number(data.dp))
         } catch (error) {
+            console.error("Error fetching pi:", error)
             setHasError(true)
         } finally {
             setLoading(false)

@@ -1,15 +1,13 @@
 services:
-  api:
+  backend:
     container_name: pi-fastapi-server
     build:
-      context: .
+      context: ./backend
       dockerfile: Dockerfile
     ports:
       - "8000:8000"
-    environment:
-      - API_KEY=${API_KEY:-your_api_key_here}
-      - MAX_DECIMAL_POINTS=${MAX_DECIMAL_POINTS:-10000}
-      - REDIS_URL=redis://redis:6379/0
+    env_file:
+      - ./backend/.env.docker
     depends_on:
       - redis
     healthcheck:
@@ -18,6 +16,19 @@ services:
       timeout: 10s
       retries: 3
       start_period: 10s
+    restart: unless-stopped
+
+  frontend:
+    container_name: pi-nextjs-client
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    env_file:
+      - ./frontend/.env.docker
+    depends_on:
+      - backend
     restart: unless-stopped
 
   redis:
