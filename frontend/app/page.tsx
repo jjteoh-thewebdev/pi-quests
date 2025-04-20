@@ -19,13 +19,11 @@ export default function Home() {
             </Suspense>
           </div>
 
-          {/* <div className="flex  gap-6"> */}
           <div className="bg-slate-800/80 rounded-lg shadow-lg p-2 backdrop-blur-sm">
             <Suspense fallback={<LoadingState />}>
               <SunInfo />
             </Suspense>
           </div>
-          {/* </div> */}
         </div>
       </div>
       </main>

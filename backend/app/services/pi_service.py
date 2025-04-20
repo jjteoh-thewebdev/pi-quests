@@ -58,25 +58,21 @@ class PiService:
             
             while current_dp < self._max_decimal_places and self._is_calculating:
                 
-                # next_dp = min(current_dp + step, self._max_decimal_places)
                 next_dp = current_dp + 1
 
-                # if next_dp > current_dp:
                 logger.info(f"Calculating Pi to {next_dp} decimal places...")
                 start_time = time.time()
                 
                 # Calculate and cache the new value
                 pi_value = self._pi_calculator.calculate_pi(next_dp)
-                
+                self._repository.cache_pi(pi_value, next_dp)
+
                 # FOR DEBUGGING, validate accuracy
                 # is_accurate = self._pi_calculator.verify_accuracy(pi_value, next_dp)
                 # if not is_accurate:
                 #     logger.error(f"Not Match")
                 # else:
                 #     logger.info(f"Match!!!!")
-                
-                
-                self._repository.cache_pi(pi_value, next_dp)
                 
                 duration = time.time() - start_time
                 logger.info(f"Calculated Pi to {next_dp} decimal places in {duration:.2f} seconds")

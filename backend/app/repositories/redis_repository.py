@@ -1,6 +1,5 @@
 import redis
 from typing import Optional, Tuple
-# import asyncio
 import logging
 
 logger = logging.getLogger(__name__)

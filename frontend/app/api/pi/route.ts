@@ -5,8 +5,6 @@ export async function GET() {
         const baseUrl = process.env.API_BASE_URL;
         const apiKey = process.env.API_KEY;
 
-        console.log(`hello`)
-
         if (!baseUrl || !apiKey) {
             return NextResponse.json(
                 { error: 'Missing API configuration' },

@@ -2,7 +2,7 @@ from fastapi import APIRouter, Depends, HTTPException
 from pydantic import BaseModel
 
 from app.api.auth_guard import verify_api_key
-from app.api.dependencies import get_pi_service, limiter
+from app.api.dependencies import get_pi_service
 from app.services.pi_service import PiService
 
 class PiResponse(BaseModel):
@@ -19,11 +19,10 @@ async def get_pi(pi_service: PiService = Depends(get_pi_service)):
     Get the current Pi value with its decimal places.
     
     Args:
-        api_key: Validated API key
         pi_service: Pi service instance
     
     Returns:
-        Dict containing Pi value and decimal places
+        PiResponse which containing Pi value and decimal places
     
     Raises:
         HTTPException: If Pi value is not available
