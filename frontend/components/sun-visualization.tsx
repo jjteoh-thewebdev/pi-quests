@@ -8,7 +8,7 @@ import Galaxy from "./galaxy"
 export default function SunVisualization() {
     return (
         <div className="w-full h-full">
-            <Canvas camera={{ position: [0, 20, 30], fov: 45, far: 1000 }}
+            <Canvas data-testid="sun-visualizer" camera={{ position: [0, 20, 30], fov: 45, far: 1000 }}
                 gl={{
                     powerPreference: "high-performance",
                     antialias: true,

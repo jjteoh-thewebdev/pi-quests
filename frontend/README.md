@@ -14,4 +14,10 @@ pnpm run build
 
 # preview output
 pnpm run start
+
+# Playwright test
+pnpm run test
+
+# Playwright report
+pnpm run playwright:report
 ```
