@@ -182,6 +182,7 @@ PC spec and CPU utilization
 Pi
 - https://en.wikipedia.org/wiki/Pi
 - https://youtu.be/1-JAx3nUwms?si=zMcB9i9RS3JKkYFK
+- https://youtu.be/gMlf1ELvRzc?si=HawpOIXHPg1dNUAe
 
 Chudnovsky algorithm & binary splitting
 - https://www.craig-wood.com/nick/articles/pi-chudnovsky/
