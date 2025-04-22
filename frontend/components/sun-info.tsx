@@ -94,7 +94,7 @@ export default function SunInfo() {
 
                     <div className="flex items-center justify-end space-x-2 pt-2">
                         <Label htmlFor="unit-toggle">km</Label>
-                            <Switch id="unit-toggle" className="cursor-pointer" checked={unit === "miles"} onCheckedChange={toggleUnit} />
+                            <Switch id="unit-toggle" data-testid="unit-toggle" className="cursor-pointer" checked={unit === "miles"} onCheckedChange={toggleUnit} />
                         <Label htmlFor="unit-toggle">miles</Label>
                     </div>
                 </CardTitle>
@@ -114,6 +114,7 @@ export default function SunInfo() {
                                 <Tooltip>
                                     <TooltipTrigger asChild>
                                         <HelpCircle
+                                            data-testid="info-icon"
                                             className="w-3 h-3 text-blue-500 cursor-pointer"
                                             onClick={() => getLatestPi()} />
                                     </TooltipTrigger>
@@ -132,7 +133,7 @@ export default function SunInfo() {
 
                 <div>
                         <h4 className="text-md font-medium mb-2">Radius(r)</h4>
-                        <p className="text-md font-semibold">
+                        <p className="text-md font-semibold" data-testid="radius">
                         {unit === "km"
                             ? `${SUN_RADIUS_KM.toLocaleString()} km`
                             : `${(SUN_RADIUS_KM * KM_TO_MILES).toLocaleString(undefined, { maximumFractionDigits: 2 })} miles`}
@@ -141,7 +142,7 @@ export default function SunInfo() {
 
                 <div>
                     <h3 className="text-lg font-medium mb-2">Circumference</h3>
-                    <p className="text-2xl font-semibold">
+                    <p className="text-2xl font-semibold" data-testid="circumference">
                         {calculateCircumference()} {unit}
                     </p>
                 </div>
@@ -151,7 +152,7 @@ export default function SunInfo() {
                     <ul className="list-disc pl-5 space-y-1 text-slate-700 dark:text-slate-300">
                         <li>Surface temperature: 5,500°C (9,940°F)</li>
                         <li>Age: ~4.6 billion years</li>
-                        <li>Distance from Earth: {unit === "km" ? "~150 million km" : "~93 million miles"}</li>
+                        <li data-testid="distance-from-earth">Distance from Earth: {unit === "km" ? "~150 million km" : "~93 million miles"}</li>
                     </ul>
                 </div>
 
