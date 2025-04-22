@@ -181,10 +181,12 @@ PC spec and CPU utilization
 
 Pi
 - https://en.wikipedia.org/wiki/Pi
+- https://youtu.be/1-JAx3nUwms?si=zMcB9i9RS3JKkYFK
 
-Chudnovsky algorithm 
+Chudnovsky algorithm & binary splitting
 - https://www.craig-wood.com/nick/articles/pi-chudnovsky/
 - https://en.wikipedia.org/wiki/Chudnovsky_algorithm 
+- https://youtu.be/LhlqCJjbEa0?si=xFLwPrZLaok_KyC2
 
 mpmath - for arbitrary precision arithmetic
 - https://mpmath.org/ 

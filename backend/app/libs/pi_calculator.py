@@ -19,6 +19,12 @@ class PiCalculator:
         return str(+pi)[:self.dps + 2]  # round and slice to desired length
 
     def _terms_needed(self, decimal_places: int) -> int:
+        """
+        Calculate the number of terms needed for the Chudnovsky algorithm to achieve the desired precision.
+        The Chudnovsky algorithm provides approximately 14.1816474627254776555 decimal places of Pi per term(k).
+        By calculating only the necessary number of terms, the function prevents wasting computational resources on excessive calculations.
+        The +1 is added to ensure that the number of terms is sufficient to achieve the desired precision.
+        """
         return int(decimal_places / 14.1816474627254776555) + 1
 
     def _split_task(self, a, b):
