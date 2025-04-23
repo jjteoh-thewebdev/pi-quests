@@ -85,6 +85,8 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 
 # Install dependencies
 pip install -r requirements.txt
+# or (using Makefile)
+make install
 
 # Install system dependencies for gmpy2
 # Ubuntu/Debian:
@@ -100,6 +102,8 @@ docker run -d -p 6379:6379 redis:alpine
 
 # Run the backend
 uvicorn app.main:app --reload
+# or (using Makefile)
+make dev
 ```
 
 #### Frontend

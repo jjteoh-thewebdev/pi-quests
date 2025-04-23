@@ -11,7 +11,7 @@
     source venv/bin/activate
 
     # to exit
-    deactivate
+    # deactivate
     ```
 4. Install dependencies
     ```bash
@@ -22,16 +22,28 @@
 
     # Install Python deps
     pip install -r requirements.txt
+
+    # Or using makefile
+    make install
     ```
 5. Start the FastAPI server
     ```bash
     uvicorn app.main:app --reload
+
+    # or using makefile
+    make dev
     ```
 6. (Optional) Run unit test
     ```bash
     pytest tests/unit
+
+    # or using makefile
+    make test-unit
     ```
 7. (Optional) Run e2e test
     ```bash
     pytest tests/e2e
+
+    # or using makefile
+    make test-e2e
     ```
